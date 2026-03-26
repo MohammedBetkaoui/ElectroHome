@@ -3,13 +3,14 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 const THEME_STORAGE_KEY = "electrohome-theme";
 
 function getInitialDarkMode(): boolean {
-  if (typeof window === "undefined") return false;
+  if (typeof window === "undefined") return true;
 
   const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
   if (storedTheme === "dark") return true;
   if (storedTheme === "light") return false;
 
-  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  // Par défaut, toujours sombre
+  return true;
 }
 
 // Images

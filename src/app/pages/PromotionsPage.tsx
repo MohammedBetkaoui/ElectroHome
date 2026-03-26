@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { Timer } from "lucide-react";
-import { PRODUCTS, useStore, formatPrice } from "../data/store";
+import { PRODUCTS, CATEGORIES, formatPrice } from "../data/store";
 import { ProductCard } from "../components/ProductCard";
 
 export function PromotionsPage() {
   const [filter, setFilter] = useState("all");
   const promoProducts = PRODUCTS.filter((p) => p.oldPrice);
-  const allProducts = filter === "all" ? PRODUCTS : PRODUCTS.filter((p) => p.category === filter);
+  const filteredProducts = filter === "all" ? promoProducts : promoProducts.filter((p) => p.category === filter);
 
   const [time, setTime] = useState({ h: 2, m: 14, s: 36 });
   useEffect(() => {
@@ -73,7 +73,7 @@ export function PromotionsPage() {
         >
           Tous
         </button>
-        {useStore().categories.map((c) => (
+        {CATEGORIES.map((c) => (
           <button
             key={c.slug}
             onClick={() => setFilter(c.slug)}
@@ -85,7 +85,7 @@ export function PromotionsPage() {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {allProducts.map((p) => <ProductCard key={p.id} product={p} />)}
+        {filteredProducts.map((p) => <ProductCard key={p.id} product={p} />)}
       </div>
     </div>
   );
