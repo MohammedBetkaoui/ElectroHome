@@ -62,4 +62,6 @@ Les fichiers optimisés sont générés dans le dossier de sortie de Vite.
 - Architecture orientée composants
 - Séparation des pages, données et styles
 - Base prête pour extension fonctionnelle (API, authentification, paiement)
+
+Betkaoui Mohammed
   
