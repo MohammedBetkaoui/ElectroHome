@@ -7,10 +7,6 @@ Interface web e-commerce inspirée de la maquette Figma du projet « Créer l'in
 
 Ce projet implémente une vitrine e-commerce moderne pour la marque ElectroHome, avec une navigation multi-pages, un catalogue produits, une gestion de panier et un mode clair/sombre persistant.
 
-## Référence design
-
-Maquette source :
-https://www.figma.com/design/O5YHsL3Ajhx5AFaM3BAJzK/Cr%C3%A9er-l-interface-d-apr%C3%A8s-la-fiche
 
 ## Stack technique
 
