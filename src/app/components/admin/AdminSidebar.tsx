@@ -77,6 +77,7 @@ export function AdminSidebar() {
           ${/* Desktop: always visible, width based on collapsed */""}
           lg:translate-x-0
           ${collapsed ? "lg:w-[72px]" : "lg:w-[260px]"}
+          admin-sidebar-hide-scrollbar
         `}
         style={{ fontFamily: "'Sora', sans-serif" }}
       >
@@ -102,7 +103,7 @@ export function AdminSidebar() {
         </div>
 
         {/* Nav */}
-        <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-5">
+        <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-5 admin-sidebar-hide-scrollbar">
           {NAV_SECTIONS.map((section) => (
             <div key={section.label}>
               {showLabels && (
