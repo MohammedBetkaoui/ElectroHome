@@ -15,6 +15,29 @@ import { ContactPage } from "./pages/ContactPage";
 import { FaqPage } from "./pages/FaqPage";
 import { AuthPage } from "./pages/AuthPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { AdminLayout } from "./components/admin/AdminLayout";
+import { AdminDashboard } from "./pages/admin/AdminDashboard";
+import { AdminProducts } from "./pages/admin/AdminProducts";
+import { AdminOrders } from "./pages/admin/AdminOrders";
+import { AdminClients } from "./pages/admin/AdminClients";
+import { AdminReturns } from "./pages/admin/AdminReturns";
+import { AdminMarketing } from "./pages/admin/AdminMarketing";
+import { AdminBlog } from "./pages/admin/AdminBlog";
+import { AdminSupport } from "./pages/admin/AdminSupport";
+import { AdminSettings } from "./pages/admin/AdminSettings";
+import { AdminAnalytics } from "./pages/admin/AdminAnalytics";
+import { AdminInvoices } from "./pages/admin/AdminInvoices";
+import { AdminInventory } from "./pages/admin/AdminInventory";
+import { AdminReviews } from "./pages/admin/AdminReviews";
+import { AdminDeliveries } from "./pages/admin/AdminDeliveries";
+import { AdminCategories } from "./pages/admin/AdminCategories";
+import { AdminReports } from "./pages/admin/AdminReports";
+import { AdminRoles } from "./pages/admin/AdminRoles";
+import { AdminLogs } from "./pages/admin/AdminLogs";
+import { AdminSuppliers } from "./pages/admin/AdminSuppliers";
+import { AdminImportExport } from "./pages/admin/AdminImportExport";
+import { AdminNotifications } from "./pages/admin/AdminNotifications";
+import { AdminPromotions } from "./pages/admin/AdminPromotions";
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +60,34 @@ export const router = createBrowserRouter([
       { path: "faq", Component: FaqPage },
       { path: "auth", Component: AuthPage },
       { path: "*", Component: NotFoundPage },
+    ],
+  },
+  {
+    path: "/admin",
+    Component: AdminLayout,
+    children: [
+      { index: true, Component: AdminDashboard },
+      { path: "analytics", Component: AdminAnalytics },
+      { path: "produits", Component: AdminProducts },
+      { path: "categories", Component: AdminCategories },
+      { path: "commandes", Component: AdminOrders },
+      { path: "retours", Component: AdminReturns },
+      { path: "clients", Component: AdminClients },
+      { path: "factures", Component: AdminInvoices },
+      { path: "livraisons", Component: AdminDeliveries },
+      { path: "inventaire", Component: AdminInventory },
+      { path: "fournisseurs", Component: AdminSuppliers },
+      { path: "marketing", Component: AdminMarketing },
+      { path: "promotions", Component: AdminPromotions },
+      { path: "avis", Component: AdminReviews },
+      { path: "blog", Component: AdminBlog },
+      { path: "support", Component: AdminSupport },
+      { path: "notifications", Component: AdminNotifications },
+      { path: "roles", Component: AdminRoles },
+      { path: "rapports", Component: AdminReports },
+      { path: "logs", Component: AdminLogs },
+      { path: "import-export", Component: AdminImportExport },
+      { path: "parametres", Component: AdminSettings },
     ],
   },
 ]);

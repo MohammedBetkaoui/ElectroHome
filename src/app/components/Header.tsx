@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { ShoppingCart, Heart, User, Sun, Moon, Search, Menu, X, Home, Grid3X3, Package } from "lucide-react";
+import { ShoppingCart, Heart, User, Sun, Moon, Search, Menu, X, Home, Grid3X3, Package, Shield } from "lucide-react";
 import { useStore } from "../data/store";
 
 export function Header() {
@@ -74,6 +74,10 @@ export function Header() {
                 <User className="w-4 h-4" />
                 Mon compte
               </Link>
+               <Link to="/admin" className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg border border-[#FF6B35]/30 text-[#FF6B35] text-sm hover:bg-[#FF6B35] hover:text-white transition-colors">
+                <Shield className="w-4 h-4" />
+                Admin
+              </Link>
               <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden w-9 h-9 rounded-lg flex items-center justify-center hover:bg-muted transition-colors">
                 {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -109,6 +113,9 @@ export function Header() {
               ))}
               <Link to="/auth" onClick={() => setMenuOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm text-[#E8400C]">
                 Mon compte
+              </Link>
+              <Link to="/admin" onClick={() => setMenuOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm text-[#FF6B35]">
+                🔧 Administration
               </Link>
             </nav>
           </div>
